@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
+
+
+
+.logo
+{
+    height: 90%;
+    width: 50px;
+    float: left;
+    padding-left: 10px;
+}
+.navBar
+{
+    height: 7vh;
+    width: 100%;
+    background: #9B9B9B;
+
+}
+
+.loginButton
+{
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px black;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
+
+.displayPDF
+{
+    padding: 20px;
+}
+
+.selectbar
+{
+    width: 250px;
+    height: 30px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 8px;
+    box-shadow: -4px 4px 10px black;
+}
+
+
+
+.tablebox
+{
+    width: 100vw;
+    height: 100vh;  
+}
+
+.tableIMG
+{
+    height: auto;
+    max-width: 100%;
+}
