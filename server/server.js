@@ -48,7 +48,8 @@ passport.use(new Auth0Strategy(
 },function(accessToken, refreshToken, extraParams, profile, done)
 {
     const db = app.get('db');
-    const { id, username, password, gender, age, profile_pic } = profile;
+    //console.log(profile)
+    const { displayName, gender, picture, id } = profile;
 
     db.find_user([id]).then(users => 
     {
@@ -58,9 +59,10 @@ passport.use(new Auth0Strategy(
         }
         else
         {
-            db.create_user([username, password, gender, age, profile_pic, id])
+            db.create_user([displayName, gender, picture, id])
             .then(createdUser => 
-            {
+            {   
+                //console.log(createdUser)
                 return done(null, createdUser[0].id);
             });
         }
