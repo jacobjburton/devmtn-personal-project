@@ -22,10 +22,7 @@ const {
     SESSION_SECRET
 } = process.env;
 
-massive(CONNECTION_STRING).then(db => 
-{
-    app.set('db', db);
-});
+
 
 app.use(session
 ({
@@ -50,11 +47,13 @@ passport.use(new Auth0Strategy(
     const db = app.get('db');
     //console.log(profile)
     const { displayName, gender, picture, id } = profile;
+    //console.log(profile)
 
     db.find_user([id]).then(users => 
     {
         if (users[0])
         {
+            //console.log("follow the trail of breadcrumbs", users[0].id)
             return done(null, users[0].id);
         }
         else
@@ -67,10 +66,12 @@ passport.use(new Auth0Strategy(
             });
         }
     });
+    // return done(null, id)
 }));
 
 passport.serializeUser(function(id, done)
 {
+    //console.log('cereal', id )
     return done(null, id);
 });
 
@@ -84,10 +85,9 @@ passport.deserializeUser((id, done) =>
 
 app.get('/auth', passport.authenticate('auth0'));
 
-app.get('/auth/callback', passport.authenticate('auth0',
-{
+app.get('/auth/callback', passport.authenticate('auth0',{
     successRedirect: 'http://localhost:3000/#/home',
-    failureRedirect: 'http://localhost:3000'
+    failureRedirect: 'http://localhost:3000/'
 }));
 
 app.get('/auth/me', (req, res) =>
@@ -107,8 +107,11 @@ app.get('/logout', (req, res) =>
     res.redirect('http://localhost:3000'); 
 });
 
-
-app.listen(SERVER_PORT, () => 
-{
-    console.log(`Listeny McListenerson on port: ${SERVER_PORT}`);
-});
+massive(CONNECTION_STRING).then(db => 
+    {
+        app.set('db', db);
+        app.listen(SERVER_PORT, () => 
+        {
+        console.log(`Listeny McListenerson on port: ${SERVER_PORT}`);
+        });
+    });

@@ -7,6 +7,9 @@ export default class Home extends Component
         return (
             <div>
                 Home
+                <a href="http://localhost:4000/logout">
+                    <button>Logout</button>
+                </a>
             </div>
         )
     }

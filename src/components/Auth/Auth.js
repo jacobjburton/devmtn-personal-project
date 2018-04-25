@@ -12,6 +12,9 @@ export default function Auth()
                 <a href={process.env.REACT_APP_LOGIN}>
                     <button className="loginButton">LOGIN</button>
                 </a>
+                <a href="http://localhost:4000/logout">
+                    <button>Logout</button>
+                </a>
             </div>
         </div>
     )

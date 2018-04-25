@@ -4,7 +4,7 @@
 .navLinks
 {
     display: grid;
-    grid-template-columns: repeat(5, 0.75fr);
+    grid-template-columns: repeat(5, 1fr);
     padding-right: 20px;
     padding-top: 15px;
     float: right;

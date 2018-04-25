@@ -12,7 +12,7 @@ export default function Nav()
                 <Link to='/events' className="linkText">Events</Link>
                 <Link to='/timestandards' className="linkText">Time Standards</Link>
                 <Link to='/addevent' className="linkText">Add Event</Link>
-                <Link to='/' className="linkText">Login/Register/Signout</Link>
+                <Link to='/' className="linkText">Login/Signout</Link>
             </div>
         </div>
     )
