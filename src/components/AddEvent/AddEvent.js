@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 
-export default class AddEvent extends Component
+class AddEvent extends Component
 {
     render()
     {
@@ -12,3 +13,5 @@ export default class AddEvent extends Component
         )
     }
 }
+
+export default connect(null)(AddEvent);

@@ -108,10 +108,12 @@ app.get('/logout', (req, res) =>
 });
 
 massive(CONNECTION_STRING).then(db => 
-    {
-        app.set('db', db);
-        app.listen(SERVER_PORT, () => 
-        {
-        console.log(`Listeny McListenerson on port: ${SERVER_PORT}`);
-        });
-    });
+{
+    app.set('db', db);
+});
+
+
+app.listen(SERVER_PORT, () => 
+{
+    console.log(`Listeny McListenerson on port: ${SERVER_PORT}`);
+});

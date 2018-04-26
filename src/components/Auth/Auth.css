@@ -20,7 +20,12 @@
 .loginButton
 {
     font-family: 'Oswald', sans-serif;
+    background: #9B9B9B;
     font-size: 24px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 8px black;
+    color: black;
+    text-decoration: none;
+    float: right;
+    border: none;
+    margin: 8px 60px 0px 0px;
+ 
 }

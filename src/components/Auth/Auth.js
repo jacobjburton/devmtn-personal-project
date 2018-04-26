@@ -1,21 +1,21 @@
 import React from 'react';
 import './Auth.css';
 
-export default function Auth()
+
+function Auth ()
 {
-    return (
-        <div className="loginScreen">
-            <div className="navBar">
-                <img src={require('../../files/img/swimming-icon-23788.png')} alt={"logo"} className="logo"/>
+    
+        return (
+            <div className="loginScreen">
+                <div className="navBar">
+                    <img src={require('../../files/img/swimming-icon-23788.png')} alt={"logo"} className="logo"/>
+                    <a href={process.env.REACT_APP_LOGIN} className="loginButton">
+                        Login
+                    </a>                
+                </div>
+                
             </div>
-            <div>
-                <a href={process.env.REACT_APP_LOGIN}>
-                    <button className="loginButton">LOGIN</button>
-                </a>
-                <a href="http://localhost:4000/logout">
-                    <button>Logout</button>
-                </a>
-            </div>
-        </div>
-    )
-}
+        )
+}   
+
+export default Auth; 
